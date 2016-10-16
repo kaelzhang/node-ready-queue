@@ -1,7 +1,7 @@
 {
   "name": "ready-queue",
   "version": "1.0.0",
-  "description": "ready-queue",
+  "description": "Ready-queue ensures initialization method only run once, and queues listeners which are registered to it.",
   "main": "index.js",
   "scripts": {
     "test": "ava --verbose --timeout=10s"
@@ -11,7 +11,11 @@
     "url": "git://github.com/kaelzhang/node-ready-queue.git"
   },
   "keywords": [
-    "ready-queue"
+    "ready-queue",
+    "queue",
+    "ready",
+    "retry",
+    "promise"
   ],
   "engines": {
     "node": ">=0.10.0"

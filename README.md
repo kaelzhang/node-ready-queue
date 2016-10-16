@@ -14,7 +14,7 @@
 
 # ready-queue
 
-<!-- description -->
+Ready-queue ensures initialization method only run once, and queues listeners which are registered to it.
 
 ## Install
 
@@ -25,8 +25,36 @@ $ npm install ready-queue --save
 ## Usage
 
 ```js
-const ready_queue = require('ready-queue')
+const queue = require('ready-queue')
+
+const q = queue({
+  load: (userId) => {
+    return getUserPromise(userId)
+  }
+})
+
+q.add(123).then((userObject) => {
+  userObject
+})
+
+q.add(123).then((userObject) => {
+  // `getUserPromise(123)` only runs once
+})
+
+q.add(234).then((userObject) => {
+  // then `getUserPromise(234)` runs
+})
 ```
+
+### queue({load, retry = 0})
+
+- **load** `function(args)` if the function is asynchronous, it should return a `Promise`.
+  - args `any` arguments which is from `.add(args)` method
+- **retry** `number=0` how many times `queue` will retry if fails.
+
+### .add(args)
+
+returns `Promise`
 
 ## License
 
