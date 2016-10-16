@@ -1,0 +1,27 @@
+{
+  "name": "ready-queue",
+  "version": "1.0.0",
+  "description": "ready-queue",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava --verbose --timeout=10s"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kaelzhang/node-ready-queue.git"
+  },
+  "keywords": [
+    "ready-queue"
+  ],
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "author": "kaelzhang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kaelzhang/node-ready-queue/issues"
+  },
+  "devDependencies": {
+    "ava": "^0.16.0"
+  }
+}
